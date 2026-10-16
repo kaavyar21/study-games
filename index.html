@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Study Games</title>
+    <script type="module" crossorigin src="./assets/index-DJZ9aGX7.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-C2Lve5rj.css">
+  </head>
+  <body>
+    <div class="app">
+      <nav class="sidebar" aria-label="Main">
+        <p class="app-name">Study Games</p>
+        <a class="nav-link" href="#write" data-view="write">
+          <span aria-hidden="true">✏️</span> Write
+        </a>
+        <a class="nav-link" href="#deck" data-view="deck">
+          <span aria-hidden="true">🗂</span> Deck
+          <span id="deck-count" class="deck-count">0</span>
+        </a>
+        <a class="nav-link" href="#match" data-view="match">
+          <span aria-hidden="true">🧩</span> Match
+        </a>
+      </nav>
+
+      <main class="content">
+        <section id="write-view" class="view" aria-labelledby="write-title">
+          <h1 id="write-title">Write a card</h1>
+          <p class="instructions">
+            Type a term, click the card to flip it, write the definition, then save it to your deck.
+          </p>
+          <div id="draft-slot" class="draft-slot"></div>
+          <button id="save-card" class="primary-button" type="button">Save to deck</button>
+          <p id="write-message" class="write-message" aria-live="polite"></p>
+        </section>
+
+        <section id="deck-view" class="view" aria-labelledby="deck-title" hidden>
+          <div class="view-header">
+            <h1 id="deck-title">Your deck</h1>
+            <p id="save-status" class="save-status" aria-live="polite"></p>
+          </div>
+          <p class="instructions">Click a card to flip it. Changes save automatically.</p>
+          <p id="empty-message" class="empty-message" hidden>
+            Your deck is empty. Go to <a href="#write">Write</a> to make your first card.
+          </p>
+          <div id="card-grid" class="card-grid"></div>
+        </section>
+
+        <section id="match-view" class="view" aria-labelledby="match-title" hidden>
+          <div class="view-header">
+            <h1 id="match-title">Match</h1>
+            <p id="match-progress" class="match-progress" aria-live="polite"></p>
+          </div>
+          <div id="match-game"></div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
