@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Study Games</title>
-    <script type="module" crossorigin src="./assets/index-BvHk5phT.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-CaAnvloY.css">
+    <script type="module" crossorigin src="./assets/index-CpyY3A_Z.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BMS3__gb.css">
   </head>
   <body>
     <div class="app">
@@ -21,8 +21,13 @@
         <a class="nav-link" href="#match" data-view="match">
           <span aria-hidden="true">🧩</span> Match
         </a>
-        <a class="nav-link" href="#quiz" data-view="quiz">
-          <span aria-hidden="true">⚡</span> Speed Quiz
+        <a class="nav-link" href="#quiz" data-view="quiz" aria-label="Speed Quiz">
+          <span aria-hidden="true">⚡</span>
+          <span class="full-label">Speed Quiz</span
+          ><span class="short-label" aria-hidden="true">Quiz</span>
+        </a>
+        <a class="nav-link" href="#battle" data-view="battle">
+          <span aria-hidden="true">⚔️</span> Battle
         </a>
       </nav>
 
@@ -60,6 +65,11 @@
         <section id="quiz-view" class="view" aria-labelledby="quiz-title" hidden>
           <h1 id="quiz-title">Speed Quiz</h1>
           <div id="quiz-game"></div>
+        </section>
+
+        <section id="battle-view" class="view" aria-labelledby="battle-title" hidden>
+          <h1 id="battle-title">Battle</h1>
+          <div id="battle-game"></div>
         </section>
       </main>
     </div>
