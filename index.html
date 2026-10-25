@@ -4,19 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Study Games</title>
-    <script type="module" crossorigin src="./assets/index-CpyY3A_Z.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-BMS3__gb.css">
+    <script type="module" crossorigin src="./assets/index-BCvuyp7v.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-DjtOaOvR.css">
   </head>
   <body>
     <div class="app">
       <nav class="sidebar" aria-label="Main">
         <p class="app-name">Study Games</p>
+        <div class="deck-picker">
+          <label for="deck-picker">Deck</label>
+          <select id="deck-picker"></select>
+          <a class="manage-decks-link" href="#decks" data-view="decks">Manage decks</a>
+        </div>
         <a class="nav-link" href="#write" data-view="write">
           <span aria-hidden="true">✏️</span> Write
         </a>
-        <a class="nav-link" href="#deck" data-view="deck">
-          <span aria-hidden="true">🗂</span> Deck
-          <span id="deck-count" class="deck-count">0</span>
+        <a class="nav-link" href="#cards" data-view="cards">
+          <span aria-hidden="true">🗂</span> Cards
+          <span id="card-count" class="deck-count">0</span>
         </a>
         <a class="nav-link" href="#match" data-view="match">
           <span aria-hidden="true">🧩</span> Match
@@ -35,21 +40,22 @@
         <section id="write-view" class="view" aria-labelledby="write-title">
           <h1 id="write-title">Write a card</h1>
           <p class="instructions">
-            Type a term, click the card to flip it, write the definition, then save it to your deck.
+            Saving to <strong id="write-deck-name"></strong>. Type a term, click the card to flip
+            it, write the definition, then save it.
           </p>
           <div id="draft-slot" class="draft-slot"></div>
           <button id="save-card" class="primary-button" type="button">Save to deck</button>
           <p id="write-message" class="write-message" aria-live="polite"></p>
         </section>
 
-        <section id="deck-view" class="view" aria-labelledby="deck-title" hidden>
+        <section id="cards-view" class="view" aria-labelledby="cards-title" hidden>
           <div class="view-header">
-            <h1 id="deck-title">Your deck</h1>
+            <h1 id="cards-title">Your cards</h1>
             <p id="save-status" class="save-status" aria-live="polite"></p>
           </div>
           <p class="instructions">Click a card to flip it. Changes save automatically.</p>
           <p id="empty-message" class="empty-message" hidden>
-            Your deck is empty. Go to <a href="#write">Write</a> to make your first card.
+            This deck is empty. Go to <a href="#write">Write</a> to make its first card.
           </p>
           <div id="card-grid" class="card-grid"></div>
         </section>
@@ -70,6 +76,15 @@
         <section id="battle-view" class="view" aria-labelledby="battle-title" hidden>
           <h1 id="battle-title">Battle</h1>
           <div id="battle-game"></div>
+        </section>
+
+        <section id="decks-view" class="view" aria-labelledby="decks-title" hidden>
+          <h1 id="decks-title">Your decks</h1>
+          <p class="instructions">
+            Pick a deck to study it. Write, Cards, and every game use the current deck.
+          </p>
+          <p id="decks-message" class="write-message" aria-live="polite"></p>
+          <div id="decks-list"></div>
         </section>
       </main>
     </div>
