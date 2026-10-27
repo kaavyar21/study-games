@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Study Games</title>
-    <script type="module" crossorigin src="./assets/index-DWXB77LN.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-CEwSNfcC.css">
+    <script type="module" crossorigin src="./assets/index-DevDMGOU.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-K0AYbkAP.css">
   </head>
   <body>
     <div class="app">
@@ -21,6 +21,11 @@
           <select id="deck-picker"></select>
           <a class="manage-decks-link" href="#decks" data-view="decks">Manage decks</a>
         </div>
+        <label class="weak-toggle">
+          <input id="weak-only" type="checkbox" />
+          <span>🎯 Weak cards only</span>
+          <span id="weak-count" class="weak-count">0</span>
+        </label>
         <a class="nav-link" href="#write" data-view="write">
           <span aria-hidden="true">✏️</span> Write
         </a>
@@ -69,6 +74,10 @@
           <p id="empty-message" class="empty-message" hidden>
             This deck is empty. Go to <a href="#write">Write</a> to make its first card, or import a
             list.
+          </p>
+          <p id="no-weak-message" class="empty-message" hidden>
+            No weak cards in this deck right now. Miss a card in any game and it shows up here; get
+            it right 2 times in a row to clear it.
           </p>
           <div id="card-grid" class="card-grid"></div>
         </section>
