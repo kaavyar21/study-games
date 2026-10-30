@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Study Games</title>
-    <script type="module" crossorigin src="./assets/index-E68NTyuv.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-BzgEDhPe.css">
+    <script type="module" crossorigin src="./assets/index-DTCG_GNV.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-xP8OJNb3.css">
   </head>
   <body>
     <div class="app">
@@ -16,44 +16,53 @@
             🔇
           </button>
         </div>
-        <div class="deck-picker">
-          <label for="deck-picker">Deck</label>
-          <select id="deck-picker"></select>
-          <a class="manage-decks-link" href="#decks" data-view="decks">Manage decks</a>
+        <div class="deck-section">
+          <div class="deck-picker">
+            <label for="deck-picker">Your deck</label>
+            <select id="deck-picker"></select>
+            <a class="manage-decks-link" href="#decks" data-view="decks">Manage decks</a>
+          </div>
+          <label class="weak-toggle">
+            <input id="weak-only" type="checkbox" />
+            <span>🎯 Weak cards only</span>
+            <span id="weak-count" class="weak-count">0</span>
+          </label>
+          <div class="deck-links">
+            <a class="nav-link" href="#cards" data-view="cards">
+              <span aria-hidden="true">🗂</span> Cards
+              <span id="card-count" class="deck-count">0</span>
+            </a>
+            <a class="nav-link add-cards-link" href="#write" data-view="write">
+              <span aria-hidden="true">+</span> Add cards
+            </a>
+          </div>
         </div>
-        <label class="weak-toggle">
-          <input id="weak-only" type="checkbox" />
-          <span>🎯 Weak cards only</span>
-          <span id="weak-count" class="weak-count">0</span>
-        </label>
-        <a class="nav-link" href="#write" data-view="write">
-          <span aria-hidden="true">✏️</span> Write
-        </a>
-        <a class="nav-link" href="#cards" data-view="cards">
-          <span aria-hidden="true">🗂</span> Cards
-          <span id="card-count" class="deck-count">0</span>
-        </a>
-        <a class="nav-link" href="#match" data-view="match">
-          <span aria-hidden="true">🧩</span> Match
-        </a>
-        <a class="nav-link" href="#quiz" data-view="quiz" aria-label="Speed Quiz">
-          <span aria-hidden="true">⚡</span>
-          <span class="full-label">Speed Quiz</span
-          ><span class="short-label" aria-hidden="true">Quiz</span>
-        </a>
-        <a class="nav-link" href="#battle" data-view="battle">
-          <span aria-hidden="true">⚔️</span> Battle
-        </a>
-        <a class="nav-link" href="#type" data-view="type" aria-label="Type It">
-          <span aria-hidden="true">✍️</span>
-          <span class="full-label">Type It</span
-          ><span class="short-label" aria-hidden="true">Type</span>
-        </a>
+        <div class="play-section">
+          <p class="nav-heading">Play</p>
+          <div class="game-links">
+            <a class="nav-link" href="#match" data-view="match">
+              <span aria-hidden="true">🧩</span> Match
+            </a>
+            <a class="nav-link" href="#quiz" data-view="quiz" aria-label="Speed Quiz">
+              <span aria-hidden="true">⚡</span>
+              <span class="full-label">Speed Quiz</span
+              ><span class="short-label" aria-hidden="true">Quiz</span>
+            </a>
+            <a class="nav-link" href="#battle" data-view="battle">
+              <span aria-hidden="true">⚔️</span> Battle
+            </a>
+            <a class="nav-link" href="#type" data-view="type" aria-label="Type It">
+              <span aria-hidden="true">✍️</span>
+              <span class="full-label">Type It</span
+              ><span class="short-label" aria-hidden="true">Type</span>
+            </a>
+          </div>
+        </div>
       </nav>
 
       <main class="content">
         <section id="write-view" class="view" aria-labelledby="write-title">
-          <h1 id="write-title">Write a card</h1>
+          <h1 id="write-title">Add cards</h1>
           <p class="instructions">
             Saving to <strong id="write-deck-name"></strong>. Type a term, click the card to flip
             it, write the definition, then save it.
@@ -85,8 +94,8 @@
           <button id="import-button" class="secondary-button" type="button">📋 Import cards</button>
           <div id="import-slot"></div>
           <p id="empty-message" class="empty-message" hidden>
-            This deck is empty. Go to <a href="#write">Write</a> to make its first card, or import a
-            list.
+            This deck is empty. Go to <a href="#write">Add cards</a> to make its first card, or
+            import a list.
           </p>
           <p id="no-weak-message" class="empty-message" hidden>
             No weak cards in this deck right now. Miss a card in any game and it shows up here; get
@@ -121,7 +130,7 @@
         <section id="decks-view" class="view" aria-labelledby="decks-title" hidden>
           <h1 id="decks-title">Your decks</h1>
           <p class="instructions">
-            Pick a deck to study it. Write, Cards, and every game use the current deck.
+            Pick a deck to study it. Add cards, Cards, and every game use the current deck.
           </p>
           <p id="decks-message" class="write-message" aria-live="polite"></p>
           <div id="decks-list"></div>

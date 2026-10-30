@@ -5,7 +5,7 @@
     <p class="empty-message">
       ${t} needs at least 4 cards with different terms, so each
       question has 4 choices. You have ${n}.
-      Go to <a href="#write">Write</a> to add more.
+      Go to <a href="#write">Add cards</a> to add more.
     </p>
   `}function Me(e,t){N.fanfare(!0),e.innerHTML=`
     <div class="finish-panel" role="status">
@@ -104,7 +104,7 @@
   `;let n=e.querySelector(`.import-text`),r=e.querySelector(`.import-preview`),i=e.querySelector(`.import-add`),a={cards:[],skipped:[]},o=()=>{a=it(n.value,t.existingCards),ut(r,a,t.deckName),i.disabled=a.cards.length===0,i.textContent=a.cards.length>0?`Add ${P(a.cards.length)}`:`Add cards`};n.addEventListener(`input`,o),i.addEventListener(`click`,()=>t.onAdd(a.cards)),e.querySelector(`.import-cancel`).addEventListener(`click`,t.onClose),t.fromFile?(e.querySelector(`#import-title`).textContent=`Import from ${t.fromFile.name}`,e.querySelector(`.instructions`).textContent=`Check the cards below. You can fix any line in the box before adding them.`,n.value=t.fromFile.text,o(),i.focus()):n.focus()}var ft=6,pt=300,mt=300,ht=450,gt=e=>new Promise(t=>setTimeout(t,e));function _t(e,t){let n=document.createElement(`button`);return n.type=`button`,n.className=`match-tile ${t}-tile`,n.dataset.id=e.id,n.textContent=t===`term`?e.term:e.definition,n.setAttribute(`aria-pressed`,`false`),n}function vt(e,t){let n=document.createElement(`div`);n.className=`match-column`;let r=document.createElement(`h2`);return r.textContent=e,n.append(r,...t),n}function yt(e,t){e.innerHTML=`
     <p class="empty-message">
       Match needs at least 2 cards with both a term and a definition.
-      You have ${t}. Go to <a href="#write">Write</a> to add more.
+      You have ${t}. Go to <a href="#write">Add cards</a> to add more.
     </p>
   `}function bt(e,t,n,r,i,a){let o=r.record(`match`,{score:t.points,timeMs:n,outOf:t.maxPoints});N.fanfare(o.isNewBest),e.innerHTML=`
     <div class="finish-panel" role="status">
@@ -178,7 +178,7 @@
       `;let o=e.querySelector(`button`);o.addEventListener(`click`,c),o.focus()}T(),w(),O()}return s(),o}function Dt(e){return e.normalize(`NFD`).replace(/\p{Diacritic}/gu,``).toLowerCase().replace(/[^\p{L}\p{N}]+/gu,` `).trim()}function Ot(e,t){let n=Array.from({length:e.length+1},(e,n)=>Array.from({length:t.length+1},(e,t)=>n===0?t:t===0?n:0));for(let r=1;r<=e.length;r++)for(let i=1;i<=t.length;i++){let a=e[r-1]===t[i-1]?0:1;n[r][i]=Math.min(n[r-1][i]+1,n[r][i-1]+1,n[r-1][i-1]+a),r>1&&i>1&&e[r-1]===t[i-2]&&e[r-2]===t[i-1]&&(n[r][i]=Math.min(n[r][i],n[r-2][i-2]+1))}return n[e.length][t.length]}function kt(e,t){let n=Dt(e),r=Dt(t);return n===``?`wrong`:n===r?`exact`:r.length>=5&&Ot(n,r)<=1?`close`:`wrong`}var At=class{cards;index=0;correctCount=0;constructor(e,t=Math.random){this.cards=o(a(e),t).slice(0,10)}get current(){return this.cards[this.index]}get isFinished(){return this.index>=this.cards.length}answer(e){if(this.isFinished)throw Error(`The round is already over.`);let t=kt(e,this.current.term);return t!==`wrong`&&this.correctCount++,this.index++,t}};function jt(e,t,n,r){let i=F(t,r);if(Ne(e,r,`Type It`,a(i).length,1))return;if(a(i).length===0){e.innerHTML=`
       <p class="empty-message">
         Type It needs at least 1 card with a term and a definition.
-        Go to <a href="#write">Write</a> to add some.
+        Go to <a href="#write">Add cards</a> to add some.
       </p>
     `;return}let o=new At(i),s=Se(r),c=performance.now(),l=()=>jt(e,t,n,r);e.innerHTML=`
     <p class="instructions">Type the term for each definition, then press Enter.</p>
