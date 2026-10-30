@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Study Games</title>
-    <script type="module" crossorigin src="./assets/index-AnQZMPER.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-C65rPIvr.css">
+    <script type="module" crossorigin src="./assets/index-E68NTyuv.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BzgEDhPe.css">
   </head>
   <body>
     <div class="app">
@@ -61,6 +61,19 @@
           <div id="draft-slot" class="draft-slot"></div>
           <button id="save-card" class="primary-button" type="button">Save to deck</button>
           <p id="write-message" class="write-message" aria-live="polite"></p>
+          <div class="file-import">
+            <p class="instructions">Already have your cards in a spreadsheet or list?</p>
+            <label class="secondary-button file-import-button">
+              📄 Import cards from file
+              <input id="import-file" type="file" accept=".csv,.txt,.tsv,text/csv,text/plain" />
+            </label>
+            <p class="file-import-hint">
+              CSV with the term in the first column and the definition in the second, or a text file
+              with one card per line.
+            </p>
+            <p id="file-import-message" class="write-message error" aria-live="polite"></p>
+            <div id="file-import-slot"></div>
+          </div>
         </section>
 
         <section id="cards-view" class="view" aria-labelledby="cards-title" hidden>
