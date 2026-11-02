@@ -4,14 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Study Games</title>
-    <script type="module" crossorigin src="./assets/index-RrWBhWCJ.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-Do1yN6aJ.css">
+    <script type="module" crossorigin src="./assets/index-r2eI73ew.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-aswhgFvp.css">
   </head>
   <body>
     <div class="app">
       <nav class="sidebar" aria-label="Main">
         <div class="app-title-row">
-          <p class="app-name">Study Games</p>
+          <a class="app-name" href="#home" data-view="home">Study Games</a>
           <button id="sound-toggle" class="sound-toggle" type="button" aria-pressed="false">
             🔇
           </button>
@@ -66,7 +66,11 @@
       </nav>
 
       <main class="content">
-        <section id="write-view" class="view" aria-labelledby="write-title">
+        <section id="home-view" class="view" aria-labelledby="home-title" hidden>
+          <div id="home-content"></div>
+        </section>
+
+        <section id="write-view" class="view" aria-labelledby="write-title" hidden>
           <h1 id="write-title">Add cards</h1>
           <p class="instructions">
             Saving to <strong id="write-deck-name"></strong>. Type a term, click the card to flip
