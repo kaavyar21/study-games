@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Study Games</title>
-    <script type="module" crossorigin src="./assets/index-HUVRt8-X.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-BaOtn11v.css">
+    <script type="module" crossorigin src="./assets/index-DMuGkXWH.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-Cp_8ak9J.css">
   </head>
   <body>
     <div class="app">
@@ -96,6 +96,43 @@
             </p>
             <p id="file-import-message" class="write-message error" aria-live="polite"></p>
             <div id="file-import-slot"></div>
+          </div>
+          <div class="file-import notes-import">
+            <p class="instructions">Have class notes as a PDF?</p>
+            <label class="secondary-button file-import-button">
+              ✨ Make cards from notes (PDF)
+              <input id="notes-file" type="file" accept=".pdf,application/pdf" />
+            </label>
+            <p class="file-import-hint">
+              Claude reads your notes and suggests cards. You check them before anything is added.
+              Uses your own Claude API key.
+            </p>
+            <form id="api-key-form" class="api-key-form" hidden>
+              <p class="instructions">
+                To read your notes, paste your Claude API key. You can make one at
+                <a href="https://console.anthropic.com/" target="_blank" rel="noopener"
+                  >console.anthropic.com</a
+                >. It's saved only in this browser and sent only to Anthropic.
+              </p>
+              <div class="deck-name-form">
+                <input
+                  id="api-key-input"
+                  type="password"
+                  autocomplete="off"
+                  spellcheck="false"
+                  aria-label="Claude API key"
+                  placeholder="sk-ant-…"
+                />
+                <button class="primary-button" type="submit">Save key and read notes</button>
+                <button id="api-key-cancel" class="secondary-button" type="button">Cancel</button>
+              </div>
+            </form>
+            <p id="notes-status" class="notes-status" aria-live="polite"></p>
+            <p id="notes-message" class="write-message error" aria-live="polite"></p>
+            <button id="forget-api-key" class="text-button" type="button" hidden>
+              Forget my API key
+            </button>
+            <div id="notes-import-slot"></div>
           </div>
         </section>
 
