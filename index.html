@@ -4,14 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Study Games</title>
-    <script type="module" crossorigin src="./assets/index-Cyf0mqQO.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-CgmeEXP_.css">
+    <script type="module" crossorigin src="./assets/index-Dfiwe2DR.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BV3pW6DM.css">
   </head>
   <body>
     <div class="app">
       <nav class="sidebar" aria-label="Main">
         <div class="app-title-row">
           <a class="app-name" href="#home" data-view="home">Study Games</a>
+          <a id="points-button" class="points-button" href="#upgrades" data-view="upgrades">⭐ 0</a>
           <button id="sound-toggle" class="sound-toggle" type="button" aria-pressed="false">
             🔇
           </button>
@@ -181,6 +182,11 @@
         <section id="type-view" class="view" aria-labelledby="type-title" hidden>
           <h1 id="type-title">Type It</h1>
           <div id="type-game"></div>
+        </section>
+
+        <section id="upgrades-view" class="view" aria-labelledby="upgrades-title" hidden>
+          <h1 id="upgrades-title">Upgrades</h1>
+          <div id="upgrades-content"></div>
         </section>
 
         <section id="decks-view" class="view" aria-labelledby="decks-title" hidden>
