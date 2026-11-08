@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Study Games</title>
-    <script type="module" crossorigin src="./assets/index-BudIP7Ud.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-DynzsvDn.css">
+    <script type="module" crossorigin src="./assets/index-B0s43ecX.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CIKosDsM.css">
   </head>
   <body>
     <div class="app">
@@ -158,7 +158,14 @@
             <p id="save-status" class="save-status" aria-live="polite"></p>
           </div>
           <p class="instructions">Click a card to flip it. Changes save automatically.</p>
-          <button id="import-button" class="secondary-button" type="button">📋 Import cards</button>
+          <div class="cards-actions">
+            <button id="import-button" class="secondary-button" type="button">
+              📋 Import cards
+            </button>
+            <a class="secondary-button" href="#calendar" data-view="calendar"
+              >📅 Upcoming reviews</a
+            >
+          </div>
           <div id="import-slot"></div>
           <p id="empty-message" class="empty-message" hidden>
             This deck is empty. Go to <a href="#write">Add cards</a> to make its first card, or
@@ -212,6 +219,11 @@
         <section id="rhythm-view" class="view" aria-labelledby="rhythm-title" hidden>
           <h1 id="rhythm-title">Rhythm Quiz</h1>
           <div id="rhythm-game"></div>
+        </section>
+
+        <section id="calendar-view" class="view" aria-labelledby="calendar-title" hidden>
+          <h1 id="calendar-title">Upcoming reviews</h1>
+          <div id="calendar-content"></div>
         </section>
 
         <section id="upgrades-view" class="view" aria-labelledby="upgrades-title" hidden>
