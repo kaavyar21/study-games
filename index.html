@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Study Games</title>
-    <script type="module" crossorigin src="./assets/index-DOTb3Dgr.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-DpXQc7PO.css">
+    <script type="module" crossorigin src="./assets/index-D41GSQu0.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-Bm2Psy2U.css">
   </head>
   <body>
     <div class="app">
@@ -109,11 +109,15 @@
             <p class="instructions">Already have your cards in a spreadsheet or list?</p>
             <label class="secondary-button file-import-button">
               📄 Import cards from file
-              <input id="import-file" type="file" accept=".csv,.txt,.tsv,text/csv,text/plain" />
+              <input
+                id="import-file"
+                type="file"
+                accept=".csv,.json,.txt,.tsv,text/csv,application/json,text/plain"
+              />
             </label>
             <p class="file-import-hint">
-              CSV with the term in the first column and the definition in the second, or a text file
-              with one card per line.
+              A CSV, a JSON backup from Export, an Anki or Quizlet export, or a text file with one
+              card per line. You'll see every card in a table before anything is added.
             </p>
             <p id="file-import-message" class="write-message error" aria-live="polite"></p>
             <div id="file-import-slot"></div>
