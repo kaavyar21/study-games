@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Study Games</title>
-    <script type="module" crossorigin src="./assets/index-X71Olgnp.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-B96rLAp-.css">
+    <script type="module" crossorigin src="./assets/index-C4RAJpCb.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-B1_rGV8_.css">
   </head>
   <body>
     <div class="app">
@@ -16,6 +16,33 @@
           <button id="sound-toggle" class="sound-toggle" type="button" aria-pressed="false">
             🔇
           </button>
+          <button
+            id="voice-button"
+            class="sound-toggle voice-button"
+            type="button"
+            aria-expanded="false"
+            aria-controls="voice-panel"
+            aria-label="Voice settings"
+            title="Read questions aloud"
+          >
+            🗣
+          </button>
+          <div id="voice-panel" class="voice-panel" role="group" aria-label="Voice" hidden>
+            <label class="voice-auto">
+              <input id="voice-auto-read" type="checkbox" />
+              Read questions aloud
+            </label>
+            <label class="voice-rate">
+              Speed
+              <input id="voice-rate" type="range" />
+              <output id="voice-rate-value" for="voice-rate">1×</output>
+            </label>
+            <button id="voice-try" class="text-button" type="button">▶ Try it</button>
+            <p class="voice-note">
+              Speed Quiz, Type It, and Tower Duel questions get a 🔊 button. Each deck's languages
+              are set on <a href="#decks">Manage decks</a>.
+            </p>
+          </div>
         </div>
         <div class="deck-section">
           <div class="deck-picker">
